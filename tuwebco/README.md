@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+Desafio : 01 Configuracion - github and install ReactJS
+Desafio : 02 NavBar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
