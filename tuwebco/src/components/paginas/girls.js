@@ -2,7 +2,7 @@ import React from 'react'
 
 const girls = () => {
   return (
-    <div>girls</div>
+    <div><h1>girls</h1></div>
   )
 }
 

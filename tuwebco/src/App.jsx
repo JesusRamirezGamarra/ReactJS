@@ -2,14 +2,17 @@ import React, { Fragment, useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TodoList } from "./components/TodoList";
 import './css/App.css'
-import { BrowserRouter as Router,Route,Routes } from "react-router-dom";//importar para bootstrap 
+import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom";//importar para bootstrap 
 import Navbar from './components/navegacion/Navbar'
 import Inicio from './components/paginas/inicio'
 import Hombres from './components/paginas/hombres'
 import Mujeres from './components/paginas/mujeres'
 import Boys from './components/paginas/boys'
 import Girls from './components/paginas/girls'
+import NotFound from './components/paginas/notFound'
 // import Items from './components/paginas/items'
+
+// import "./css/bootstrap.min.css"
 
 
 const KEY = "todoApp.todos";
@@ -64,18 +67,20 @@ export function App() {
         <Router>
           <Navbar />
         </Router>
-        <Router>
-        <Routes>
-            <Route path='/' exac compoenenter={Inicio}/>
-            <Route path='/hombres' exac compoenenter={Hombres}/>
-            <Route path='/mujeres' exac compoenenter={Mujeres}/>
-            <Route path='/boys' exac compoenenter={Boys}/>
-            <Route path='/girls' exac compoenenter={Girls}/>
+        {/* <Router>
+          <Routes>
+            <Route exact path='/' element={Inicio}/>
+            <Route exact path='/hombres' element={Hombres}/>
+            <Route path='/mujeres' exact component={Mujeres}/>
+            <Route path='/boys' exact component={Boys}/>
+            <Route path='/girls' exact component={Girls}/>
+            <Route path='*'  component={NotFound}/>
           </Routes>
-        </Router>
+        </Router> */}
       </div>
 
       <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <div> Probando Fragment</div>
       <input ref={todoTaskRef} type="text" placeholder="Nueva tarea" />
       <button onClick={handleTodoAdd}>Añadir</button>
       <button onClick={handleClearAll}>Eliminar</button>
