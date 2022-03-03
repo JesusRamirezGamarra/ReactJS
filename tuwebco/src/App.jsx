@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useRef, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { TodoList } from "./components/TodoList";
-import './css/App.css'
 import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom";//importar para bootstrap 
+import { v4 as uuidv4 } from "uuid";
+
+
+import './css/App.css'
+import { TodoList } from "./components/TodoList";
 import Navbar from './components/navegacion/Navbar'
 import Inicio from './components/paginas/inicio'
 import Hombres from './components/paginas/hombres'
@@ -10,12 +12,22 @@ import Mujeres from './components/paginas/mujeres'
 import Boys from './components/paginas/boys'
 import Girls from './components/paginas/girls'
 import NotFound from './components/paginas/notFound'
+
+import {CartWidget} from './components/BigCard/CartWidget'
+// import BannerContainer from "./components/Container/BannerContainer";
+import BannerSuperior from "./components/Banner/BannerSuperior";
+import BannerSuperiorExtends from "./components/Banner/BannerSuperiorExtends";
+// import BigCard from "./components/BigCard/BigCard";
+import ItemListContainer from './components/Container/ItemListContainer'
 // import Items from './components/paginas/items'
 
 // import "./css/bootstrap.min.css"
 
 
 const KEY = "todoApp.todos";
+
+
+
 
 export function App() {
   const todoTaskRef = useRef();
@@ -57,16 +69,36 @@ export function App() {
     setTodos(newTodos);
   };
 
+
+
+  const promocionPrincipal ="50"
+  const promocionSecundaria ="10"
+  const promocionPrincipalExtends ="30"
+  const promocionSecundariaExtends ="15"
+
+
+  const saludar = () =>{
+    console.log("Hola Coders")
+  }
+
+
+
   return (
    
+  
     
       <Fragment>
 
       <div className="App">
         {/* <h1>Navbar v3.0</h1> */}
         <Router>
-          <Navbar />
+          {/* <BannerContainer /> */}
+          <BannerSuperiorExtends promocionPrincipal={promocionPrincipal} promocionSecundaria={promocionSecundaria} />
+          <BannerSuperior promocionPrincipal={promocionPrincipalExtends} promocionSecundaria={promocionSecundariaExtends} />
+          <Navbar /> 
         </Router>
+        <ItemListContainer />
+        {/* <BigCard ejecutar={saludar} /> */}
         {/* <Router>
           <Routes>
             <Route exact path='/' element={Inicio}/>
