@@ -68,9 +68,9 @@ const Navbar = () => {
                     </form>
                 </div>
                 <Link className="navbar-brand  mx-auto" to="/">
-                    <CartWidget>
-                    {/* <img src={imgLogo} height="42" alt="Tu Web CO" />  e-Commerce */}
-                    </CartWidget>
+                    <CartWidget />
+                    {/* <img src={imgLogo} height="42" alt="Tu Web CO" />  e-Commerce
+                    </CartWidget> */}
                 </Link>
          
             </div>

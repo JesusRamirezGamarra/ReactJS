@@ -3,6 +3,8 @@ Desafio : 01 Configuracion - github and install ReactJS
 
 Desafio : 02 NavBar
 
+Desafio : 03 Landing
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

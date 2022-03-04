@@ -17,7 +17,7 @@ import {CartWidget} from './components/BigCard/CartWidget'
 // import BannerContainer from "./components/Container/BannerContainer";
 import BannerSuperior from "./components/Banner/BannerSuperior";
 import BannerSuperiorExtends from "./components/Banner/BannerSuperiorExtends";
-// import BigCard from "./components/BigCard/BigCard";
+import BigCard from "./components/BigCard/BigCard";
 import ItemListContainer from './components/Container/ItemListContainer'
 // import Items from './components/paginas/items'
 
@@ -30,6 +30,9 @@ const KEY = "todoApp.todos";
 
 
 export function App() {
+
+
+
   const todoTaskRef = useRef();
   const [todos, setTodos] = useState([
     { id: 1, task: "Tarea ", completed: false },
@@ -75,17 +78,15 @@ export function App() {
   const promocionSecundaria ="10"
   const promocionPrincipalExtends ="30"
   const promocionSecundariaExtends ="15"
-
+  const mensajeTemporal = "Funciona este ItemListContainer"
+  const coderHouse = "Coder House"
 
   const saludar = () =>{
     console.log("Hola Coders")
   }
 
 
-
   return (
-   
-  
     
       <Fragment>
 
@@ -97,8 +98,8 @@ export function App() {
           <BannerSuperior promocionPrincipal={promocionPrincipalExtends} promocionSecundaria={promocionSecundariaExtends} />
           <Navbar /> 
         </Router>
-        <ItemListContainer />
-        {/* <BigCard ejecutar={saludar} /> */}
+        <ItemListContainer mensajeTemporal={mensajeTemporal} marca={coderHouse} />
+        <BigCard ejecutar={saludar} />
         {/* <Router>
           <Routes>
             <Route exact path='/' element={Inicio}/>
@@ -112,14 +113,14 @@ export function App() {
       </div>
 
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <div> Probando Fragment</div>
-      <input ref={todoTaskRef} type="text" placeholder="Nueva tarea" />
-      <button onClick={handleTodoAdd}>Añadir</button>
-      <button onClick={handleClearAll}>Eliminar</button>
-      <div>
-        Te quedan {todos.filter((todo) => !todo.completed).length} tareas por
-        terminar
-      </div>
+        <div> Probando Fragment</div>
+        <input ref={todoTaskRef} type="text" placeholder="Nueva tarea" />
+        <button onClick={handleTodoAdd}>Añadir</button>
+        <button onClick={handleClearAll}>Eliminar</button>
+        <div>
+          Te quedan [{todos.filter((todo) => !todo.completed).length}] tareas por
+          terminar 
+        </div>
     </Fragment>
   );
 }
